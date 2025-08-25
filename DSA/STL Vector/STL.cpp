@@ -29,10 +29,10 @@ int main()
     }
 
     //* output with reference
-    for (int &c : v)
-    {
-        cout << c << " ";
-    }
+    // for (int &c : v)
+    // {
+    //     cout << c << " ";
+    // }
 
     // //* output with out reference
     // for(int c : v)
@@ -45,6 +45,13 @@ int main()
 
     // v.pop_back();                            // back one element delate
     // cout << v.back() << endl;                // back element output
-
+    // v.insert(v.begin() + 1, 100);               // pointer base work 0 index start
+    // v.erase(v.begin()+2, v.begin() + 5  );      // range delate
+    // v.clear();                                  // vector clear 
+     // v.empty()                                    // vector is if empty 1,  else 0 
+    for(int c : v)
+    {
+        cout << c << " ";
+    }
     return 0;
 }

@@ -94,6 +94,15 @@ int main()
     // cout << *min_it << " " << *mx_it << endl;
 
    // cout << count(v.begin(), v.end(), 90) << endl;   // digit count
+   // fill(v.begin(), v.end(), 100);                  // all feel up 100
+
+   //* left rotate
+   // rotate(v.begin(), v.begin()+3, v.end());
+   //* right Rotate
+   // rotate(v.begin(), v.end() - 3, v.end());
+
+   
+
     for (auto c : v)
     {
 

@@ -73,6 +73,7 @@ int main()
     // int find_Element_Positions = it - v.begin();
     // cout << find_Element_Positions << endl;
 
+
     //* vector track or unique value
     // for (auto c : v)
     // {
@@ -83,7 +84,8 @@ int main()
     //     }
     // }
 
-    //* anather way uniqe finding
+
+    //* anather way unique finding
     // sort(v.begin(), v.end());
     // auto last =  unique(v.begin(), v.end());
     // v.erase(last, v.end());

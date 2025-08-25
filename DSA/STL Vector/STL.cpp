@@ -101,7 +101,9 @@ int main()
    //* right Rotate
    // rotate(v.begin(), v.end() - 3, v.end());
 
-   
+   //* sum vector
+   // int sum = accumulate(v.begin(), v.end(), 0);
+   //  cout << sum << endl;
 
     for (auto c : v)
     {

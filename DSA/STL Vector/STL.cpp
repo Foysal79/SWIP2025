@@ -93,7 +93,7 @@ int main()
     // auto mx_it = max_element(v.begin(), v.end());
     // cout << *min_it << " " << *mx_it << endl;
 
-   // cout << count(v.begin(), v.end(), 90) << endl;   // digit count
+   // cout << count(v.begin(), v.end(), 90) << endl;   // fin element and how many time are exist 
    // fill(v.begin(), v.end(), 100);                  // all feel up 100
 
    //* left rotate
@@ -105,6 +105,8 @@ int main()
    // int sum = accumulate(v.begin(), v.end(), 0);
    //  cout << sum << endl;
 
+   //* freq count 
+   vector<int> freq(10, 0);
     for (auto c : v)
     {
 

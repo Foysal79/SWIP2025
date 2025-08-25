@@ -50,7 +50,7 @@ int main()
     // v.clear();                                  // vector clear
     // v.empty()                                    // vector is if empty 1,  else 0
     // sort(v.begin(), v.end());                    // sort vector
-     sort(v.begin(), v.end(), greater<int>());      // sort but reverse way
+    // sort(v.begin(), v.end(), greater<int>());      // sort but reverse way
     // reverse(v.begin(), v.end());                 // reverse vector
 
 
@@ -67,6 +67,12 @@ int main()
     // {
     //     cout << *it << " ";
     // }
+
+    //* find a number
+    // auto it = find(v.begin(), v.end(), 4);
+    // int find_Element_Positions = it - v.begin();
+    // cout << find_Element_Positions << endl;
+
 
     
     for(auto &c : v)

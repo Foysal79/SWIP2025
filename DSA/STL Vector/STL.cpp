@@ -7,6 +7,7 @@ int main()
     int n;
     cin >> n;
     vector<int> v(n); // only initial
+    // vector<bool> track(10, false);      // vector track
     // vector<int> v = {1, 2, 3, 5};   // vector number initial
     // vector<int> v(10);              //with size initial
     // vector<int> v(10, 5);              //size with index value
@@ -53,7 +54,6 @@ int main()
     // sort(v.begin(), v.end(), greater<int>());      // sort but reverse way
     // reverse(v.begin(), v.end());                 // reverse vector
 
-
     //* vector iterator ( traves = iterat , Use an iterator to traverse that. )
     // vector<int>::iterator it;
     // // it = v.begin();
@@ -73,11 +73,32 @@ int main()
     // int find_Element_Positions = it - v.begin();
     // cout << find_Element_Positions << endl;
 
+    //* vector track or unique value
+    // for (auto c : v)
+    // {
+    //     if (track[c] == false)
+    //     {
+    //         cout << c << " ";
+    //         track[c] = true;
+    //     }
+    // }
+   
+    //* anather way uniqe finding
+    //sort(v.begin(), v.end());
+    //auto last =  unique(v.begin(), v.end());
+    //v.erase(last, v.end());
 
-    
-    for(auto &c : v)
+    //* maximum and minimum number
+    // auto min_it = min_element(v.begin(), v.end());
+    // auto mx_it = max_element(v.begin(), v.end());
+    // cout << *min_it << " " << *mx_it << endl;
+
+   // cout << count(v.begin(), v.end(), 90) << endl;   // digit count
+    for (auto c : v)
     {
+
         cout << c << " ";
     }
+
     return 0;
 }

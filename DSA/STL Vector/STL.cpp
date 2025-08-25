@@ -47,9 +47,29 @@ int main()
     // cout << v.back() << endl;                // back element output
     // v.insert(v.begin() + 1, 100);               // pointer base work 0 index start
     // v.erase(v.begin()+2, v.begin() + 5  );      // range delate
-    // v.clear();                                  // vector clear 
-     // v.empty()                                    // vector is if empty 1,  else 0 
-    for(int c : v)
+    // v.clear();                                  // vector clear
+    // v.empty()                                    // vector is if empty 1,  else 0
+    // sort(v.begin(), v.end());                    // sort vector
+     sort(v.begin(), v.end(), greater<int>());      // sort but reverse way
+    // reverse(v.begin(), v.end());                 // reverse vector
+
+
+    //* vector iterator ( traves = iterat , Use an iterator to traverse that. )
+    // vector<int>::iterator it;
+    // // it = v.begin();
+    // // it = v.end() - 1;
+    // for (it = v.begin(); it != v.end(); it++)
+    // {
+    //     cout << *it << " ";
+    // }
+    //* iterator auto c++14
+    // for(auto it = v.begin(); it != v.end(); it++)
+    // {
+    //     cout << *it << " ";
+    // }
+
+    
+    for(auto &c : v)
     {
         cout << c << " ";
     }

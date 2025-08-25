@@ -82,35 +82,73 @@ int main()
     //         track[c] = true;
     //     }
     // }
-   
+
     //* anather way uniqe finding
-    //sort(v.begin(), v.end());
-    //auto last =  unique(v.begin(), v.end());
-    //v.erase(last, v.end());
+    // sort(v.begin(), v.end());
+    // auto last =  unique(v.begin(), v.end());
+    // v.erase(last, v.end());
 
     //* maximum and minimum number
     // auto min_it = min_element(v.begin(), v.end());
     // auto mx_it = max_element(v.begin(), v.end());
     // cout << *min_it << " " << *mx_it << endl;
 
-   // cout << count(v.begin(), v.end(), 90) << endl;   // fin element and how many time are exist 
-   // fill(v.begin(), v.end(), 100);                  // all feel up 100
+    // cout << count(v.begin(), v.end(), 90) << endl;   // fin element and how many time are exist
+    // fill(v.begin(), v.end(), 100);                  // all feel up 100
 
-   //* left rotate
-   // rotate(v.begin(), v.begin()+3, v.end());
-   //* right Rotate
-   // rotate(v.begin(), v.end() - 3, v.end());
+    //* left rotate
+    // rotate(v.begin(), v.begin()+3, v.end());
+    //* right Rotate
+    // rotate(v.begin(), v.end() - 3, v.end());
 
-   //* sum vector
-   // int sum = accumulate(v.begin(), v.end(), 0);
-   //  cout << sum << endl;
+    //* sum vector
+    // int sum = accumulate(v.begin(), v.end(), 0);
+    //  cout << sum << endl;
 
-   //* freq count 
-   vector<int> freq(10, 0);
+    //* freq count
+    //  vector<int> freq(10, 0);
+
+    //    for(int &c : v)
+    //    {
+    //       freq[c]++;
+    //    }
+
+    //    for(int i = 0; i <= 10; i++)
+    //    {
+    //     if(freq[i] > 0)
+    //     {
+    //         cout << i << " " << freq[i] << endl;
+    //     }
+    //    }
+
+    //* anther way freq check
+    //  vector<int> freq(10, 0);
+    //    for(int &c : v)
+    //    {
+    //       freq[c]++;
+    //    }
+    // sort(v.begin(), v.end());
+    // v.erase(unique(v.begin(), v.end()) , v.end());
+
+    // for (auto c : v)
+    // {
+    //     cout << c << " " << freq[c] << endl;
+    // }
+
+    //* element delate
+    // auto last = remove(v.begin(), v.end(), 2);
+    // v.erase(last, v.end());
+
+    //* anather way delate
+
+    //  while(find(v.begin(), v.end(), 2) != v.end())
+    //  {
+    //     v.erase(find(v.begin(), v.end(), 2));
+    //  }
+
     for (auto c : v)
     {
-
-        cout << c << " ";
+        cout << c << endl;
     }
 
     return 0;

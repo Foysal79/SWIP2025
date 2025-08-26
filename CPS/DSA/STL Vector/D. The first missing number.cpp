@@ -5,19 +5,23 @@ int main()
 
     int n, m;
     cin >> n >> m;
-    vector<int> v(n);
-    vector<int> v1;
-    for(auto &x : v)
-    {
-        cin >> x;
-    }
-    sort(v.begin(), v.end());
+    vector<bool> present(2*m, false);
 
-    int star = -(n-1);
-    for(int i = star; i < n; i++)
+    for(int i = 0; i < n; i++)
     {
-        if(i == 0) continue;
-        else v1.push_back(i);
+        int x;
+        cin >> x;
+        present[x+m] = true;
     }
+    for(int i = -m; i <= m; i++)
+    {
+        if(!present[i+m])
+        {
+            cout << i << endl;
+            return 0;
+        }
+    }
+    
+
     return 0;
 }

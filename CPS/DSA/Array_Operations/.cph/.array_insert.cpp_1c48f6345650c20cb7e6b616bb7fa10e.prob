@@ -1,0 +1,1 @@
+{"name":"Local: array_insert","url":"f:\\Software_enginer_interview_preperations\\Array_Operations\\array_insert.cpp","tests":[{"id":1750141523987,"input":"10 \n1 1 1 1 1 8 3 4 5 7 ","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Software_enginer_interview_preperations\\Array_Operations\\array_insert.cpp","group":"local","local":true}

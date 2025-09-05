@@ -24,16 +24,40 @@ int main(){
 
 deque<int> dq;
 dq.push_back(10);
-dq.push_back(345);
+dq.push_back(10);
 dq.push_back(56);
 dq.push_back(23);
 dq.push_back(89);
 dq.push_front(3);
 
+cout << "Deque Front element : " << dq.front() << endl;
+cout << "Deque back element : " << dq.back() << endl;
+cout << "Deque size : " << dq.size() << endl;
 
+//dq.insert(dq.begin() + 1, 100);
+
+sort(dq.begin(), dq.end());
+dq.erase(unique(dq.begin(), dq.end()), dq.end());
+
+auto it = find(dq.begin(), dq.end(), 10);
+cout << it - dq.begin() << endl;
+
+
+// using range base for loop
 for(int x : dq)
 {
    cout << x << " ";
+}
+cout << endl;
+for(auto it = dq.begin(); it != dq.end(); it++)
+{
+  cout << *it << endl;
+}
+cout << endl;
+// using loop
+for(int i = 0; i < dq.size(); i++)
+{
+    cout << dq[i] << " ";
 }
 
 }

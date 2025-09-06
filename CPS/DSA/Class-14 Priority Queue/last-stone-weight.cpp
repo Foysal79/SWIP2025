@@ -17,17 +17,17 @@ int main()
       pq.push(c);
     }
     int first_max = pq.top();
-    while(pq.size() > 0 && pq.top() == first_max) 
+    while(!pq.empty() && pq.top() == first_max) 
     {
         pq.pop();
     }
     bool second_max = false;
-    if(pq.size() > 0)
+    if(!pq.empty())
     {
         int sMax = pq.top();
         while(pq.size() > 0 && pq.top() == sMax) pq.pop();
     }
-    if(pq.size() > 0)
+    if(!pq.empty())
     {
         cout << pq.top() << endl;
         return 0;

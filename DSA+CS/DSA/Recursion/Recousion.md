@@ -162,21 +162,13 @@ public:
 ## How to Work
 
 ```
-i=2: F(0)+F(1) = 0+1 → F(2)=1
-      previoustow <- previousone = 1
-      previousone <- currentF = 1
+| i | Calculation          | previoustow | previousone | currentF |
+|   |                      |             |             |          |
+| 2 | currentF = 1 + 0 = 1 | 1           | 1           | 1        |
+| 3 | currentF = 1 + 1 = 2 | 1           | 2           | 2        |
+| 4 | currentF = 2 + 1 = 3 | 2           | 3           | 3        |
+| 5 | currentF = 3 + 2 = 5 | 3           | 5           | 5        |
 
-i=3: F(1)+F(2) = 1+1 → F(3)=2
-      previoustow <- previousone = 1
-      previousone <- currentF = 2
-
-i=4: F(2)+F(3) = 1+2 → F(4)=3
-      previoustow <- previousone = 2
-      previousone <- currentF = 3
-
-i=5: F(3)+F(4) = 2+3 → F(5)=5
-      previoustow <- previousone = 3
-      previousone <- currentF = 5
 ```
 
 ### Complexity

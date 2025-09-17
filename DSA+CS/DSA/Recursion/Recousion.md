@@ -24,7 +24,7 @@ factorial(1) = 1
 
 **Result:** 5*4*3*2*1 = 120
 
-## Complexity
+### Complexity
 
 - **Time:** O(n)
 - **Space:** O(n) (recursion stack)
@@ -62,21 +62,21 @@ fact(5)
 ⇒ dp[5] = 120
 ```
 
-# Memoization Table After Execution
+### Memoization Table After Execution
 
 ```
 n	  0	  1	2	3	 4	   5
 dp	-1	1	2	6	 24	  120
 ```
 
-# Complexity:
+### Complexity:
 
 - **Time:** O(n)
 - **Space:** O(n) (recursion stack + dp array)
 
-### Fibonacci
+# Fibonacci
 
-# Fibonacci Example (n = 5)
+## Fibonacci Example (n = 5)
 
 ```cpp
 #include <bits/stdc++.h>
@@ -134,7 +134,7 @@ fact(5) ?
 => dp[5] = 120
 ```
 
-# complexity
+### complexity
 
 - **Time Complexity:** O(n)
 - **Space Complexity:** O(n) (dp array + stack)

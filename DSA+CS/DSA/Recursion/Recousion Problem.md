@@ -1,0 +1,115 @@
+<!-- # LeetCode-এর Generate Parentheses : -->
+# [LeetCode Generate Parentheses Problem](https://leetcode.com/problems/generate-parentheses/)
+
+
+```cpp
+class Solution {
+public:
+   bool isValid(string s){
+    stack<char> st;
+   for(auto c : s)
+   {
+    if(c == '(')
+    {
+        st.push(c);
+    }
+    else {
+        if(st.empty())
+        {
+            return false;
+        }
+        else{
+            st.pop();
+        }
+    }
+    
+   }
+return st.empty();
+   }
+
+   void solve(int n, string cur, vector<string> &ans){
+        if(cur.size() == (2 * n)) {
+            if(isValid(cur)) ans.push_back(cur);
+            return;
+        }
+        solve(n, cur + "(", ans);
+        solve(n, cur + ")", ans);
+   }
+   
+    vector<string> generateParenthesis(int n) {
+        vector<string> ans;
+        string cur;
+        solve(n, cur, ans);
+        return ans;
+    }
+};
+```
+### recursion tree step-by-step
+```
+Root: ""
+├─ "("
+│  ├─ "(("
+│  │  ├─ "((("
+│  │  │  ├─ "((((" ❌
+│  │  │  └─ "((()" 
+│  │  │      ├─ "((()(" ❌
+│  │  │      └─ "((())" 
+│  │  │          ├─ "((())(" ❌
+│  │  │          └─ "((()))" ✅
+│  │  └─ "(()"
+│  │      ├─ "(()(" 
+│  │      │   ├─ "(()((" ❌
+│  │      │   └─ "(()()" 
+│  │      │        ├─ "(()()(" ❌
+│  │      │        └─ "(()())" ✅
+│  │      └─ "(())" 
+│  │           ├─ "(())(" ❌
+│  │           └─ "(())()" ✅
+│  └─ "()" 
+│      ├─ "()(" 
+│      │   ├─ "()((" ❌
+│      │   └─ "()()" 
+│      │        ├─ "()()(" ❌
+│      │        └─ "()()()" ✅
+│      └─ "())" ❌
+└─ ")" ❌
+```
+
+### ✅ Valid leaves / final answers:
+```
+((()))
+
+(()())
+
+(())()
+
+()(())
+
+()()()
+```
+### ❌ Invalid / pruned nodes:
+```
+")" (first char closing)
+
+()❌
+
+(((("
+
+((()("
+
+((())("
+
+(()(("
+
+(()()("
+
+(())(
+
+()(("
+
+()()(
+
+())
+```
+---
+

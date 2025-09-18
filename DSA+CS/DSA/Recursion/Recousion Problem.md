@@ -1,10 +1,24 @@
-<!-- # LeetCode-এর Generate Parentheses : -->
-# [LeetCode Generate Parentheses Problem](https://leetcode.com/problems/generate-parentheses/)
+# Easy Problem  
+
+---
+# Medium Problem 
+
+
+---
+# Hard Problem 
+
+
+
+---
+# LeetCode Problem
+# [LeetCode Problem solution : Generate Parentheses Problem](https://leetcode.com/problems/generate-parentheses/)
 
 
 ```cpp
+
 class Solution {
 public:
+   // check parentheses
    bool isValid(string s){
     stack<char> st;
    for(auto c : s)
@@ -27,8 +41,9 @@ public:
 return st.empty();
    }
 
+// Recursion Call 
    void solve(int n, string cur, vector<string> &ans){
-        if(cur.size() == (2 * n)) {
+        if(cur.size() == (2 * n)) {  // base case
             if(isValid(cur)) ans.push_back(cur);
             return;
         }

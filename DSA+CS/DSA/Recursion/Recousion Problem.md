@@ -1,18 +1,18 @@
-# Easy Problem  
+# Easy Problem
 
 ---
-# Medium Problem 
 
-
----
-# Hard Problem 
-
-
+# Medium Problem
 
 ---
+
+# Hard Problem
+
+---
+
 # LeetCode Problem
-# [LeetCode Problem solution : Generate Parentheses Problem](https://leetcode.com/problems/generate-parentheses/)
 
+# [LeetCode Problem solution : Generate Parentheses Problem](https://leetcode.com/problems/generate-parentheses/)
 
 ```cpp
 
@@ -36,12 +36,12 @@ public:
             st.pop();
         }
     }
-    
+
    }
 return st.empty();
    }
 
-// Recursion Call 
+// Recursion Call
    void solve(int n, string cur, vector<string> &ans){
         if(cur.size() == (2 * n)) {  // base case
             if(isValid(cur)) ans.push_back(cur);
@@ -50,7 +50,7 @@ return st.empty();
         solve(n, cur + "(", ans);
         solve(n, cur + ")", ans);
    }
-   
+
     vector<string> generateParenthesis(int n) {
         vector<string> ans;
         string cur;
@@ -59,31 +59,35 @@ return st.empty();
     }
 };
 ```
-### recursion tree step-by-step
+
+### recursion tree n = 3 step-by-step
+
 ```
 Root: ""
 ├─ "("
 │  ├─ "(("
-│  │  ├─ "((("
-│  │  │  ├─ "((((" ❌
-│  │  │  └─ "((()" 
-│  │  │      ├─ "((()(" ❌
-│  │  │      └─ "((())" 
-│  │  │          ├─ "((())(" ❌
-│  │  │          └─ "((()))" ✅
-│  │  └─ "(()"
-│  │      ├─ "(()(" 
+│  │   ├─ "((("
+│  │   │  ├─ "((((" ❌
+│  │   │  └─ "((()"
+│  │   │      ├─ "((()(" ❌
+│  │   │      └─ "((())"
+│  │   │          ├─ "((())(" ❌
+│  │   │          └─ "((()))" ✅
+│  │   └─ "(()"
+│  │      ├─ "(()("
 │  │      │   ├─ "(()((" ❌
-│  │      │   └─ "(()()" 
+│  │      │   └─ "(()()"
 │  │      │        ├─ "(()()(" ❌
 │  │      │        └─ "(()())" ✅
-│  │      └─ "(())" 
+│  │      └─ "(())"
 │  │           ├─ "(())(" ❌
 │  │           └─ "(())()" ✅
-│  └─ "()" 
-│      ├─ "()(" 
-│      │   ├─ "()((" ❌
-│      │   └─ "()()" 
+│  └─ "()"
+│      ├─ "()("
+│      │   ├─ "()((" 
+│      │   │    ├─ "()(()" 
+│      │   │    └─ "()(())" ✅
+│      │   └─ "()()"
 │      │        ├─ "()()(" ❌
 │      │        └─ "()()()" ✅
 │      └─ "())" ❌
@@ -91,6 +95,7 @@ Root: ""
 ```
 
 ### ✅ Valid leaves / final answers:
+
 ```
 ((()))
 
@@ -102,7 +107,9 @@ Root: ""
 
 ()()()
 ```
+
 ### ❌ Invalid / pruned nodes:
+
 ```
 ")" (first char closing)
 
@@ -126,5 +133,5 @@ Root: ""
 
 ())
 ```
----
 
+---

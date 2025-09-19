@@ -228,4 +228,45 @@ Start: "" (o=0,c=0)
 ()()()
 ```
 
+#### Complexity Analysis
+
+## ⏱️ Time Complexity
+
+1. We place `n` opening and `n` closing brackets → total string length = `2n`.
+2. In the recursion tree, each position can branch into at most 2 choices (`'('` or `')'`). Worst case tree size = `O(2^(2n))`.
+3. But invalid paths are pruned (`closing < opening` condition). The actual number of valid strings is the **Catalan number**:
+
+   $$
+   C_n = \frac{1}{n+1}\binom{2n}{n}
+   $$
+
+   Asymptotically:
+
+   $$
+   C_n \sim \frac{4^n}{n^{3/2}\sqrt{\pi}}
+   $$
+
+4. Each valid string construction costs `O(n)`.
+   ➡️ **Final Time Complexity:**
+   $$
+   O(n \cdot C_n) \approx O\!\left(\frac{4^n}{\sqrt{n}}\right)
+   $$
+
+## 💾 Space Complexity
+
+Two parts:
+
+1. **Recursion stack depth** → at most `2n`, so `O(n)`.
+2. **Result storage** → we must store `C_n` strings of length `2n`.
+   $$
+   O(n \cdot C_n)
+   $$
+   **Final Space Complexity:**
+   $$
+   O(n \cdot C_n) + O(n)
+   $$
+
+- **Time Complexity:** `O(n * Cn)` ≈ `O(4^n / √n)`
+- **Space Complexity:** `O(n * Cn)` (results) + `O(n)` (recursion stack)
+
 ---

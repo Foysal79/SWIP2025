@@ -313,6 +313,74 @@ public:
     }
 }; 
 ```
+## Input: nums = `[1,2,3]`
+## Output: `[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]`
+
+## Step by step Solve
+### Root (Level 0)
+```
+Copy code
+[] (mask=[F,F,F])
+L0 loop i=0 → start
+```
+## Level 1: pick first element
+```i=0 🔵 pick 1 → [1] (mask=[T,F,F])
+    L1 loop i=0 → start
+    i=0 skip
+    i=1 🔵 pick 2 → [1,2] (mask=[T,T,F])
+        L2 loop i=0 → start
+        i=0 skip
+        i=1 skip
+        i=2 🔵 pick 3 → [1,2,3] (mask=[T,T,T]) ✅
+        🔴 pop 3 → [1,2] (mask=[T,T,F])
+        L2 loop i=2 → end
+    i=2 🔵 pick 3 → [1,3] (mask=[T,F,T])
+        L2 loop i=0 → start
+        i=0 skip
+        i=1 🔵 pick 2 → [1,3,2] (mask=[T,T,T]) ✅
+        🔴 pop 2 → [1,3] (mask=[T,F,T])
+        L2 loop i=2 → end
+    🔴 pop 1 → [] (mask=[F,F,F])
+```
+## Level 2: pick second element
+```
+i=1 🔵 pick 2 → [2] (mask=[F,T,F])
+    L1 loop i=0 → start
+    i=0 🔵 pick 1 → [2,1] (mask=[T,T,F])
+        L2 loop i=0 → start
+        i=0 skip
+        i=1 skip
+        i=2 🔵 pick 3 → [2,1,3] (mask=[T,T,T]) ✅
+        🔴 pop 3 → [2,1] (mask=[T,T,F])
+        L2 loop i=2 → end
+    i=2 🔵 pick 3 → [2,3] (mask=[F,T,T])
+        L2 loop i=0 → start
+        i=0 🔵 pick 1 → [2,3,1] (mask=[T,T,T]) ✅
+        🔴 pop 1 → [2,3] (mask=[F,T,T])
+        L2 loop i=2 → end
+    🔴 pop 2 → [] (mask=[F,F,F])
+```
+## Level 3: pick Third element
+```
+i=2 🔵 pick 3 → [3] (mask=[F,F,T])
+    L1 loop i=0 → start
+    i=0 🔵 pick 1 → [3,1] (mask=[T,F,T])
+        L2 loop i=0 → start
+        i=0 skip
+        i=1 🔵 pick 2 → [3,1,2] (mask=[T,T,T]) ✅
+        🔴 pop 2 → [3,1] (mask=[T,F,T])
+        L2 loop i=2 → end
+    i=1 🔵 pick 2 → [3,2] (mask=[F,T,T])
+        L2 loop i=0 → start
+        i=0 🔵 pick 1 → [3,2,1] (mask=[T,T,T]) ✅
+        🔴 pop 1 → [3,2] (mask=[F,T,T])
+        L2 loop i=2 → end
+    🔴 pop 3 → [] (mask=[F,F,F])
+```
+## Leaf Nodes (Base Cases)
+`[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]`
+
+
 #### Time Complexity : O(n×n!)
 here are ```n!``` permutations and building each permutation takes ```O(n)```
 #### Auxiliary Space= ```O(n)(excluding output)```

@@ -134,4 +134,98 @@ Root: ""
 ())
 ```
 
+## Optimized solutions
+
+```cpp
+class Solution {
+public:
+    void solve(int n, string &cur, int opeming, int closing, vector<string> &ans)
+    {
+      if(cur.size() == 2 * n)
+      {
+        ans.push_back(cur);
+        return;
+      }
+      if(opeming < n)
+      {
+        cur.push_back('(');
+        solve(n, cur, opeming+1, closing, ans);
+        cur.pop_back();
+      }
+      if(closing < opeming)
+      {
+        cur.push_back(')');
+        solve(n, cur, opeming, closing+1, ans);
+        cur.pop_back();
+      }
+    }
+    vector<string> generateParenthesis(int n) {
+        string cur;
+        vector<string> ans;
+        int opening = 0;
+        int closing = 0;
+        solve(n, cur, opening, closing, ans);
+        return ans;
+    }
+};
+```
+
+### 📌 Recursion Tree for n = 2 with (o, c)
+
+```
+Start: "" (o=0,c=0)
+        |
+        "(" (o=1,c=0)
+       /        \
+ "((" (o=2,c=0)  "()" (o=1,c=1)
+     |               \
+ "(()" (o=2,c=1)      "()(" (o=2,c=1)
+     |                   |
+ "(())" (o=2,c=2)      "()()" (o=2,c=2)
+```
+
+#### Leaf nodes (final answers):
+
+```
+(())
+
+()()
+```
+
+### 📌 Recursion Tree for n = 3 with (o, c)
+
+```
+Start: "" (o=0,c=0)
+        |
+        "(" (o=1,c=0)
+       /        \
+  "((" (o=2,c=0)  "()" (o=1,c=1)
+   /       \           \
+"((("     "(()"         "()("
+(o=3,c=0) (o=2,c=1)    (o=2,c=1)
+   |     /      \      /     \
+"((()" "(()(" "(()))" "()((" "()()"
+(3,1)  (3,1)  (2,2)   (3,1)  (2,2)
+   |      |      |       |      |
+"((())" "(()()" "(()())" "()(()" "()()("
+(3,2)   (3,2)   (2,3)   (3,2)   (3,2)
+   |       |       |       |       |
+"((()))" "(()())" "(())()" "()(())" "()()()"
+(3,3)   (3,3)   (3,3)   (3,3)   (3,3)
+```
+
+#### ✅ Leaf nodes (final answers):
+
+```
+((()))
+
+(()())
+
+(())()
+
+()(())
+
+()()()
+```
+
 ---

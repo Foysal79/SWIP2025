@@ -1,5 +1,11 @@
 # Easy Problem
+#  [Print 1 to n using Recursion]()
 
+
+---
+#  [Print n to 1 without loop]()
+
+---
 #  [Sum of first n natural numbers using recursion]()
 
 ```cpp
@@ -52,8 +58,27 @@ Recursion_sum(5)
 = 5 + (4 + (3 + (2 + (1 + 0))))
 = 15
 ```
+### Time complexity : `O(n)`
 
+### Auxiliary space : `O(n)`
 
+---
+
+#  [Decimal to binary number using recursion]()
+
+---
+#  [Sum of array]()
+
+---
+#  [Reverse of a string]()
+
+---
+#  [Length of a string]()
+
+---
+#  [Sum of digit]()
+
+---
 ---
 
 # Medium Problem

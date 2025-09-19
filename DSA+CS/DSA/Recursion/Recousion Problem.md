@@ -270,3 +270,51 @@ Two parts:
 - **Space Complexity:** `O(n * Cn)` (results) + `O(n)` (recursion stack)
 
 ---
+
+
+
+#  [LeetCode Problem solution : 46. Permutations Problem](https://leetcode.com/problems/permutations/description/)
+
+```cpp
+class Solution {
+public:
+   void solve(vector<int> &nums, vector<int> &cur, vector<bool> &mask, vector<vector<int>> &ans)
+   {
+    if(nums.size() == cur.size())
+    {
+        ans.push_back(cur);
+        return;
+    }
+    
+    for(int i = 0; i < nums.size(); i++)
+    {
+        if(mask[i] == 0)
+        {
+             cur.push_back(nums[i]);
+             mask[i] = 1;
+            solve(nums, cur, mask, ans);
+
+            cur.pop_back();
+            mask[i] = 0;
+        }
+    }
+
+     
+   }
+    vector<vector<int>> permute(vector<int>& nums) {
+        
+        vector<vector<int>> ans;
+        vector<int> cur;
+        vector<bool> mask(nums.size(), 0);
+
+        solve(nums, cur, mask, ans);
+        
+        return ans;
+    }
+}; 
+```
+#### Time Complexity : O(n×n!)
+here are ```n!``` permutations and building each permutation takes ```O(n)```
+#### Auxiliary Space= ```O(n)(excluding output)```
+
+#### Total Space (including ans)= ```O(n⋅n!)```

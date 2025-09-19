@@ -1,5 +1,59 @@
 # Easy Problem
 
+#  [Sum of first n natural numbers using recursion]()
+
+```cpp
+int Recursion_sum(int n)
+{
+   if(n == 0) return n; // base case
+
+   // Recursive call
+   return n + Recursion_sum(n-1);
+
+}
+int main()
+{
+    int n; cin >> n;
+    cout << Recursion_sum(n) ;
+    return 0;
+}
+
+```
+```
+Input : 3
+Output : 6
+Explanation : 1 + 2 + 3= 6
+
+Input : 5
+Output : 15
+Explanation : 1 + 2 + 3 + 4 + 5 = 15
+```
+## How to Work 
+### N = 3
+```
+Top-Down ↓                             Bottom-Up ↑
+
+Recursion_sum(3)                       = 6
+= 3 + Recursion_sum(2)                 ← (3 + 3)
+         Recursion_sum(2)              = 3
+         = 2 + Recursion_sum(1)        ← (2 + 1)
+                  Recursion_sum(1)     = 1
+                  = 1 + Recursion_sum(0) ← (1 + 0)
+                           Recursion_sum(0) = 0     
+```
+### N = 5
+```
+Recursion_sum(5)
+= 5 + Recursion_sum(4)
+= 5 + (4 + Recursion_sum(3))
+= 5 + (4 + (3 + Recursion_sum(2)))
+= 5 + (4 + (3 + (2 + Recursion_sum(1))))
+= 5 + (4 + (3 + (2 + (1 + Recursion_sum(0)))))
+= 5 + (4 + (3 + (2 + (1 + 0))))
+= 15
+```
+
+
 ---
 
 # Medium Problem
